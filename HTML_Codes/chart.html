@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Learning - Setup Your Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .info {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .referral {
+            display: flex;
+            align-items: center;
+        }
+        .referral input {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        .checkbox-label input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Let's setup your account</h2>
+    <div class="info">
+        Please select correct Work Experience as it will help us recommend right courses for your career growth.
+    </div>
+    <form>
+        <input type="text" id="name" name="name" value="SAHITHYA DASARI" required>
+        
+        <select id="experience" name="experience" required>
+            <option value="college_student">I am currently a College Student</option>
+            <option value="working_professional">I am a Working Professional</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <div class="phone-verification">
+            <select id="country-code" name="country-code" style="width: 20%;">
+                <option value="+91">+91</option>
+                <!-- Add more country codes as needed -->
+            </select>
+            <input type="tel" id="phone" name="phone" placeholder="81234 56789" style="width: 75%;" required>
+            <button type="button" style="width: 100%; margin-top: 10px;">VERIFY</button>
+        </div>
+        
+        <div class="referral">
+            <input type="text" id="referral" name="referral" value="MEB@GREAT" required>
+            <button type="button">
+                <img src="eye-icon.png" alt="Show/Hide" style="width: 20px;">
+            </button>
+        </div>
+        
+        <a href="#">Have a referral code? Click here</a>
+        
+        <div class="checkbox-label">
+            <input type="checkbox" id="notifications" name="notifications" checked>
+            <label for="notifications">I would like to be notified about free courses, exclusive webinars and course recommendations on WhatsApp</label>
+        </div>
+        
+        <button type="submit">Sign Up</button>
+    </form>
+    <p>By Signing up, you agree to our <a href="#">Terms & Conditions</a> and our <a href="#">Privacy Policy</a></p>
+</div>
+
+</body>
+</html>

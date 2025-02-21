@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="guess.css">
+</head>
+<body>
+
+<div class="container text-center">
+  <h1><font color="yellow"><b><i>Guess the Number!</i></b></font></h1>
+  <p><font color="red"><i><b>I'm thinking of a number between 1 and 20...</b></i></font></p>
+  <input id="guessInput" type="number" placeholder="Enter your guess">
+  <button id="submitGuess" class="btn btn-primary">Submit</button>
+  <font color="green"><p id="result"></p></font>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const secretNumber = Math.floor(Math.random() * 20) + 1; // Generates random number between 1 and 20
+  let attempts = 3; // Number of attempts allowed
+
+  const submitButton = document.getElementById("submitGuess");
+  const resultMessage = document.getElementById("result");
+  const guessInput = document.getElementById("guessInput");
+
+  submitButton.addEventListener("click", function() {
+    const userGuess = parseInt(guessInput.value);
+
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > 20) {
+      resultMessage.textContent = "Please enter a valid number between 1 and 20!";
+    } else {
+      if (userGuess === secretNumber) {
+        resultMessage.textContent = "Congratulations! You guessed the correct number!";
+        submitButton.disabled = true;
+        guessInput.disabled = true;
+      } else if (userGuess < secretNumber) {
+        resultMessage.textContent = "Too low! Try a higher number.";
+        attempts--;
+        updateAttempts();
+      } else {
+        resultMessage.textContent = "Too high! Try a lower number.";
+        attempts--;
+        updateAttempts();
+      }
+    }
+  });
+
+  function updateAttempts() {
+    if (attempts === 0) {
+      resultMessage.textContent = `Sorry, you've run out of attempts. The number was ${secretNumber}.`;
+      submitButton.disabled = true;
+      guessInput.disabled = true;
+    } else {
+      resultMessage.textContent += ` ${attempts} attempt(s) remaining.`;
+    }
+  }
+});
+</script>
+</body>
+</html>
+
+
+
+
+

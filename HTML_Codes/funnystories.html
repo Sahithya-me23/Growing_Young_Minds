@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Story Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+        }
+
+        .image-side {
+            position: relative;
+            background: url('fun.jpg') center/cover no-repeat;
+            overflow: hidden;
+	    height:100%
+        }
+
+        .story-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(to right, #b1041b, #f7cd45cb);
+            color: #0e0d0d;
+	    height:100%;
+        line-height: 30px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-side"></div>
+        <div class="story-side animate-in">
+            <h1><u><b>A man and three thugs</b></u></h1>
+            <p><i>In a faraway village, a man used to help a landlord without asking for anything in return. He was extremely superstitious. Impressed with the work, the landlord rewards the man with a big healthy goat, one day.
+
+The man carries the goat on his shoulders and starts walking back home. Three wicked thugs observe him and decide to trick him.
+
+The first thug comes to him and asks, “Why are you carrying a dog on your shoulders.” The man gets angry and tells the thug that it is a goat and not a dog.
+
+As he keeps walking, the second thug passes by and enquires why he was carrying a dead calf on his shoulders. The man’s anger multiplies and says, “You fool! Can’t you see this is a goat?” However, the second thug’s question plants the seed of suspicion in the man’s mind.
+
+After walking for some more distance, the third thug approaches the man, and asks in a sarcastic tone, “Why are you carrying a donkey on your shoulders?”
+
+The superstitious man gets scared thinking the goat is actually a ghost. He leaves it right there and runs away.
+
+The three thugs take the goat away, laughing at the man’s stupidity.</p></i>
+        </div>
+    </div>
+</body>
+</html>
+

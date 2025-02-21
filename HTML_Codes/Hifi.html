@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <style>
+            img {
+              width: 100%;
+              height: 100%;
+              margin: 0 ;
+            }
+        body {
+            background-color: #3498db;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            background-color: rgba(227, 230, 71, 0.3);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: float 4s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh);
+                opacity: 0;
+            }
+        }
+
+        /* Generate random bubbles */
+        @keyframes spawn {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20vh);
+            }
+        }
+
+        /* Apply animation with random delays to each bubble */
+        .bubble:nth-child(1) {
+            animation: float 40s infinite, spawn 100s linear infinite;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .bubble:nth-child(2) {
+            animation: float 50s infinite, spawn 4s linear infinite;
+            left: 30%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .bubble:nth-child(3) {
+            animation: float 60s infinite, spawn 6s linear infinite;
+            left: 50%;
+            width: 250px;
+            height: 250px;
+        }
+
+        .bubble:nth-child(4) {
+            animation: float 40s infinite, spawn 7s linear infinite;
+            left: 70%;
+            width: 350px;
+            height: 350px;
+        }
+
+        .bubble:nth-child(5) {
+            animation: float 3s infinite, spawn 8s linear infinite;
+            left: 90%;
+            width: 28px;
+            height: 28px;
+        }
+    </style>
+
+        <title>Intro</title>
+    </head>
+    <body>
+        <img src="Cute.jpg">
+        <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    </body>
+</html>

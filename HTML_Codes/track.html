@@ -1,0 +1,68 @@
+<html>
+
+<body>
+	<style>
+		body {
+			background-image: url('Cute.jpg');
+			background-size: 100%;
+			align-items: center;
+			justify-content: center;
+
+		}
+
+		.flex-parent {
+			display: flex;
+		}
+
+		.jc-center {
+			justify-content: center;
+		}
+
+		button.margin-right {
+			margin-right: 360px;
+			margin-top: 200px;
+			width: 150px;
+			height: 250px;
+			background-color:transparent ;
+			border: 0px;
+		}
+/*Rainbow background
+		.rainbow{
+			background: linear-gradient(45deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF, #FF00FF);
+            background-size: 600% 600%;
+            animation: rainbow 8s linear infinite;
+			height: 10vh;
+		}*/
+		/* Define a CSS animation for the rainbow effect 
+		@keyframes rainbow {
+			0% {
+				background-position: 0% 50%;
+			}
+
+			100% {
+				background-position: 100% 50%;
+			}
+		}
+
+		/* Style the text with a white color and a text shadow for contrast 
+		.lighting-text {
+			font-size: 50px;
+			font-weight: bold;
+			font-style:italic;
+			text-align: center;
+			color: white;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		}*/
+	</style>
+	<script>
+		document.getElementById("hifi").addEventListener("click", redirect);
+		function redirect() {
+			window.location = "mushroom.html";
+		}
+	</script>
+	<div class="flex-parent jc-center">
+		<button class="margin-right" id="hifi" onclick="redirect()"> </button>
+	</div>
+</body>
+
+</html>

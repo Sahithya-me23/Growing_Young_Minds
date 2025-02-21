@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Include Chart.js library from CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="text-align: center;">
+	<h1 style="color: rgb(59, 219, 27);">
+		Child Activities in the Website
+	</h1>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function () {
+			let countFromPage1 = localStorage.getItem('btnCount') || 0;
+			let count2FromPage1 = localStorage.getItem('btn2Count') || 0;
+			let count3FromPage1 = localStorage.getItem('btn3Count') || 0;
+			let count4FromPage1 = localStorage.getItem('btn4Count') || 0;
+			let count5FromPage1 = localStorage.getItem('btn5Count') || 0;
+			let count6FromPage1 = localStorage.getItem('btn6Count') || 0;
+			let count7FromPage1 = localStorage.getItem('btn7Count') || 0;
+			let count8FromPage1 = localStorage.getItem('btn8Count') || 0;
+			let count9FromPage1 = localStorage.getItem('btn9Count') || 0;
+			let count10FromPage1 = localStorage.getItem('btn10Count') || 0;
+
+
+
+			// Create and append display elements to the body
+			let displayContainer = document.createElement("p");
+			displayContainer.innerHTML = `Button Clicked <span id="displayFromPage1">${countFromPage1}</span> Times`;
+			//document.body.appendChild(displayContainer);
+
+			let display2Container = document.createElement("p");
+			display2Container.innerHTML = `Button2 Clicked <span id="display2FromPage1">${count2FromPage1}</span> Times`;
+			//document.body.appendChild(display2Container);
+
+
+			let display3Container = document.createElement("p");
+			display3Container.innerHTML = `Button Clicked <span id="display3FromPage1">${count3FromPage1}</span> Times`;
+			//document.body.appendChild(display3Container);
+
+			let display4Container = document.createElement("p");
+			display4Container.innerHTML = `Button Clicked <span id="display4FromPage1">${count4FromPage1}</span> Times`;
+			//document.body.appendChild(display4Container);
+
+			let display5Container = document.createElement("p");
+			display5Container.innerHTML = `Button Clicked <span id="display5FromPage1">${count5FromPage1}</span> Times`;
+			//document.body.appendChild(display5Container);
+
+			let display6Container = document.createElement("p");
+			display6Container.innerHTML = `Button Clicked <span id="display6FromPage1">${count6FromPage1}</span> Times`;
+			//document.body.appendChild(display6Container);
+
+			let display7Container = document.createElement("p");
+			display7Container.innerHTML = `Button Clicked <span id="display7FromPage1">${count7FromPage1}</span> Times`;
+			//document.body.appendChild(display7Container);
+
+			let display8Container = document.createElement("p");
+			display8Container.innerHTML = `Button Clicked <span id="display8FromPage1">${count8FromPage1}</span> Times`;
+			//document.body.appendChild(display8Container);
+
+			let display9Container = document.createElement("p");
+			display9Container.innerHTML = `Button Clicked <span id="display9FromPage1">${count9FromPage1}</span> Times`;
+			//document.body.appendChild(display9Container);
+
+			let display10Container = document.createElement("p");
+			display10Container.innerHTML = `Button Clicked <span id="display10FromPage1">${count10FromPage1}</span> Times`;
+			//document.body.appendChild(display10Container);
+
+			let a = countFromPage1;
+			let b = count2FromPage1;
+			let c = count3FromPage1;
+			let d = count4FromPage1;
+			let e = count5FromPage1;
+			let f = count6FromPage1;
+			let g = count7FromPage1;
+			let h = count8FromPage1;
+			let i = count9FromPage1;
+
+
+			var ctx = document.getElementById('myChart').getContext('2d');
+			var myChart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: ['STORIES', 'QUIZ', 'WORDFINDGAME', 'MYTHOLOGY', 'GUESSING GAME', 'MISSPELTWORD', 'TICTACTOE', 'VIDEO STORIES', 'COMPETITIONS'],
+					datasets: [{
+						label: 'CHILD STATISTICS',
+						data: [a, b, c, d, e, f, g, h, i],
+						backgroundColor: ['rgba(128, 0, 128, 0.7)',
+						'rgba(72, 207, 173, 0.7)',  
+                        'rgba(255, 203, 97, 0.7)', 
+                        'rgba(255, 141, 96, 0.7)', 
+                        'rgba(239, 83, 80, 0.7)', 
+                        'rgba(124, 179, 66, 0.7)'   
+					],
+						borderColor: ['rgba(128, 0, 128, 1)',
+						'rgba(72, 207, 173, 0.7)',  
+                        'rgba(255, 203, 97, 0.7)',  
+                        'rgba(255, 141, 96, 0.7)', 
+                        'rgba(239, 83, 80, 0.7)',   
+                        'rgba(124, 179, 66, 0.7)' 
+					],
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						y: {
+							beginAtZero: true
+						}
+					}
+				}
+			});
+			// Optional: Clear localStorage if needed
+			// localStorage.removeItem('btnCount');
+			// localStorage.removeItem('btn2Count');
+		});
+	</script>
+	<canvas id="myChart" width="400" height="150"></canvas>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Indian Mythology</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    .characters {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 0 10px;
+    }
+    #info {
+      text-align: center;
+    }
+    #info h2 {
+      margin-bottom: 10px;
+    }
+    #info p {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<div>
+  <h1>Indian Mythology</h1>
+  <div class="characters">
+    <button onclick="showInfo('krishna')">Lord Krishna</button>
+    <button onclick="showInfo('ganesha')">Lord Ganesha</button>
+    <button onclick="showInfo('sita')">Sita</button>
+  </div>
+  <div id="info"></div>
+</div>
+
+<script>
+  function showInfo(character) {
+    const infoDiv = document.getElementById('info');
+    let info = '';
+
+    switch (character) {
+      case 'krishna':
+        info = `
+          <h2>Lord Krishna</h2>
+          <img src="krishna-image.jpg" alt="Lord Krishna">
+          <p>
+            Lord Krishna, an incarnation of Lord Vishnu, is a central figure in Hindu mythology. He is revered as a divine being, a supreme God, a heroic warrior, and a teacher.The name "Krishna" originates from the Sanskrit word Kṛṣṇa, which is primarily an adjective meaning "black", "dark", or "dark blue".[34] The waning moon is called Krishna Krishna Paksha, relating to the adjective meaning "darkening".[34] The name is also interpreted sometimes as "all-attractive".
+
+As a name of Vishnu, Krishna is listed as the 57th name in the Vishnu Sahasranama. Based on his name, Krishna is often depicted in idols as black- or blue-skinned. Krishna is also known by various other names, epithets, and titles that reflect his many associations and attributes. Among the most common names are Mohan "enchanter"; Govinda "chief herdsman",[36] Keev "prankster", and Gopala "Protector of the 'Go'", which means "soul" or "the cows".[37][38] Some names for Krishna hold regional importance; Jagannatha, found in the Puri Hindu temple, is a popular incarnation in Odisha state and nearby regions of eastern India.[39][40][41]
+
+
+    Jagannath: Odisha
+    Vithoba: Maharashtra
+    Shrinathji: Rajasthan
+    Guruvayoorappan/Kannan: Kerala
+    Dwarakadhish/Ranchhod: Gujarat
+    Mayon/Parthasarathy/Kannan: Tamil Nadu
+    Kr̥śṇayya: Karnataka
+
+Historical and literary sources
+
+The tradition of Krishna appears to be an amalgamation of several independent deities of ancient India, the earliest to be attested being Vāsudeva.[42] Vāsudeva was a hero-god of the tribe of the Vrishnis, belonging to the Vrishni heroes, whose worship is attested from the 5th–6th century BCE in the writings of Pāṇini, and from the 2nd century BCE in epigraphy with the Heliodorus pillar.[42] At one point in time, it is thought that the tribe of the Vrishnis fused with the tribe of the Yadavas/Abhiras, whose own hero-god was named Krishna.[42] Vāsudeva and Krishna fused to become a single deity, which appears in the Mahabharata, and they started to be identified with Vishnu in the Mahabharata and the Bhagavad Gita.[42] Around the 4th century CE, another tradition, the cult of Gopala-Krishna of the Ābhīras, the protector of cattle, was also absorbed into the Krishna tradition.[42]
+Early epigraphic sources
+ith the death of Krishna.[137] Differing in some details, the fifth book of the Vishnu Purana moves away from Harivamsa realism and embeds Krishna in mystical terms and eulogies.[138] The Vishnu Purana manuscripts exist in many versions.[139]
+
+The tenth and eleventh books of the Bhagavata Purana are widely considered to be a poetic masterpiece, full of imagination and metaphors, with no relation to the realism of pastoral life found in the Harivamsa. Krishna's life is presented as a cosmic play (Lila), where his youth is set as a princely life with his foster father Nanda portrayed as a king.[140] Krishna's life is closer to that of a human being in Harivamsa, but is a symbolic universe in the Bhagavata Purana, where Krishna is within the universe and beyond it, as well as the universe itself, always.[141] The Bhagavata Purana manuscripts also exist in many versions, in numerous Indian languages.[142][88]
+
+Chaitanya Mahaprabhu is considered as the incarnation of Krishna in Gaudiya Vaishnavism and by the ISKCON community.[143][144][145]
+Proposed datings
+See also: Vedic-Puranic chronology and History of Hinduism
+14th-century fresco of Radha Krishna in Udaipur, Rajasthan
+
+
+    ISKCON Temples
+        Hare Krishna Golden Temple
+        ISKCON Temple, Bangalore
+        ISKCON Temple, Chennai
+        ISKCON Temple, Delhi
+        ISKCON Temple, Pune
+        ISKCON Temple, Vrindavan
+        New Vrindaban, West Virginia
+        Vrindavan Chandrodaya Temple
+    Jagannath Temple, Puri
+    Kantajew Temple, Bangladesh
+    Krishna Janmasthan Temple Complex, Mathura
+    Madan Mohan Temple, Karauli
+    Parthasarathy Temple, Chennai
+    Prem Mandir, Vrindavan
+    Radha Damodar Temple, Junagadh
+    Radha Damodar Temple, Vrindavan
+    Radha Krishna Vivah Sthali, Bhandirvan
+    Radha Madan Mohan Temple, Vrindavan
+    Radha Madhab Temple, Bishnupur
+    Radha Raman Temple, Vrindavan
+    Radha Vallabh Temple, Vrindavan
+    Rajagopalaswamy Temple, Mannargudi
+    Ranchodrai Temple, Dakor
+    Shree Govindajee Temple, Imphal
+    Shrinathji Temple, Nathdwara
+    Sri Kunj Bihari Temple, Malaysia
+    Swaminarayan Temples
+        Shri Swaminarayan Mandir, Dholera
+        Swaminarayan Mandir, Gadhada
+    Trichambaram Temple, Thaliparamba
+    Udupi Sri Krishna Matha
+    Vithoba Temple, Pandarpur
+    Vraj Hindu Temple.
+
+
+          </p>
+          <p>
+            Krishna's life, teachings, and actions are documented in the sacred texts like the Bhagavad Gita and the Mahabharata. He is known for his wisdom, compassion, and playful nature.
+          </p>
+        `;
+        break;
+
+      case 'ganesha':
+        info = `
+          <h2>Lord Ganesha</h2>
+          <img src="ganesha-image.jpg" alt="Lord Ganesha">
+          <p>
+            Ganesha, also known as Ganapati, is one of the most revered deities in Hindu mythology. He is worshipped as the remover of obstacles, the god of beginnings, wisdom, and intellect.
+          </p>
+          <p>
+            Ganesha is depicted with the head of an elephant and a human body. His elephant head symbolizes wisdom and his trunk represents Om, the sound of the universe.Ganesha is worshipped on many religious and secular occasions; especially at the beginning of ventures such as buying a vehicle or starting a business.[131] K.N Soumyaji says, "there can hardly be a [Hindu] home [in India] which does not house an idol of Ganapati. ... Ganapati, being the most popular deity in India, is worshipped by almost all castes and in all parts of the country".[132] Devotees believe that if Ganesha is propitiated, he grants success, prosperity and protection against adversity.[133]
+
+Ganesha is a non-sectarian deity. Hindus of all denominations invoke him at the beginning of prayers, important undertakings, and religious ceremonies.[134] Dancers and musicians, particularly in southern India, begin art performances such as the Bharatanatyam dance with a prayer to Ganesha.[77] Mantras such as Om Shri Gaṇeshāya Namah (Om, salutation to the Illustrious Ganesha) are often used. One of the most famous mantras associated with Ganesha is Om Gaṃ Ganapataye Namah (Om, Gaṃ, Salutation to the Lord of Hosts).[135]
+
+Devotees offer Ganesha sweets such as modaka and small sweet balls called laddus. He is often shown carrying a bowl of sweets, called a modakapātra.[136] Because of his identification with the color red, he is often worshipped with red sandalwood paste (raktachandana)[137] or red flowers. Dūrvā grass (Cynodon dactylon) and other materials are also used in his worship
+          </p>
+        `;
+        break;
+
+      case 'sita':
+        info = `
+          <h2>Sita</h2>
+          <img src="sita-image.jpg" alt="Sita">
+          <p>
+            Sita is a central female character in the Hindu epic Ramayana. She is the consort of Lord Rama and is admired for her loyalty, purity, and courage.
+          </p>
+          <p>
+            Her abduction by the demon king Ravana and her subsequent trials during her exile are among the most well-known episodes in Indian mythology.Described as the daughter of Bhūmi (the earth), Sita is brought up as the adopted daughter of King Janaka of Videha.[11][12] Sita, in her youth, chooses Rama, the prince of Ayodhya as her husband in a swayamvara. After the swayamvara, she accompanies her husband to his kingdom, but later chooses to accompany her husband, along with her brother-in-law Lakshmana, in his exile. While in exile, the trio settles in the Dandaka forest from where she is abducted by Ravana, the Rakshasa king of Lanka. She is imprisoned in the garden of Ashoka Vatika, in Lanka, until she is rescued by Rama, who slays her captor. After the war, in some versions of the epic, Rama asks Sita to undergo Agni Pariksha (an ordeal of fire), by which she proves her chastity, before she is accepted by Rama, which for the first time makes his brother Lakshmana angry at him.
+
+In some versions of the epic, Maya Sita, an illusion created by Agni, takes Sita's place and is abducted by Ravana and suffers his captivity, while the real Sita hides in the fire. Some scriptures also mention her previous birth being Vedavati, a woman Ravana tries to molest.[13] After proving her purity, Rama and Sita return to Ayodhya, where they are crowned as king and queen. One day, a man questions Sita's fidelity and in order to prove her innocence and maintain his own and the kingdom's dignity, Rama sends Sita into the forest near the sage Valmiki's ashram. Years later, Sita returns to the womb of her mother, the Earth, for release from a cruel world and as a testimony of her purity, after she reunites her two sons Kusha and Lava with their father Rama.
+          </p>
+        `;
+        break;
+
+      default:
+        info = `<p>No information available for ${character}.</p>`;
+        break;
+    }
+
+    infoDiv.innerHTML = info;
+  }
+</script>
+
+</body>
+</html>
+

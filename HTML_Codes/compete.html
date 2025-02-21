@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  </head>
+  <style>
+    #login-container {
+            background-color: rgb(240, 243, 55);
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(19, 17, 17, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+            margin-left: 60px;
+            transition: transform 0.3s ease;
+        }
+        .login-container:hover {
+            transform: scale(1.2); /* Scale the container to 120% on hover */
+        }
+  </style>
+  <body>
+    <form action="competition.php" method="post" enctype="multipart/form-data">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-5">
+          <img src="image5.jpg" height="650" width="500"> </img>
+        </div>
+        <div class="col-5" id="login-container">
+          <fieldset>
+            <form action="#" method="post" id="login-form">
+              <br>
+              <h1>Welcome to the Art's Corner</h1>
+              <br>
+              <label for="name">Enter Your Name</label>
+            <input type="text" id="name" placeholder="Your Name">
+            <br>
+            <br>
+            <label for="age"> Enter Your Age</label>
+            <input type="number" id="age" placeholder="Enter age">
+            <br>
+            <br>
+            <select name="gender" required>
+              <option value="" disabled selected>Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+          </select>
+          <br>
+          <br>
+          <select name="genre" required>
+            <option value="" disabled selected>Select Genre</option>
+            <option value="male">Pencil Sketch</option>
+            <option value="female">Crayon Work</option>
+            <option value="other">Painting</option>
+        </select>
+        <br>
+        <br>
+            <div>
+              <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              <br>
+              <br>
+              <button class="btn btn-info" type="submit" id="inputGroupFileAddon04">Submit</button>
+            </div>
+          </form>
+        </fieldset>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+  </body>
+</html>

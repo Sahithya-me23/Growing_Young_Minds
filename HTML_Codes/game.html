@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(45deg, #9af3ff, #e958b9);
+            background-size: 400% 400%;
+            animation: gradientAnimation 5s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        #game-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .thumbs-up {
+            color: #4CAF50;
+            font-size: 36px;
+        }
+    </style>
+    <script>
+        // Define your words and the index of the misspelled word
+        const words = ['apple', 'orange', 'bananna', 'grape'];
+        const misspelledIndex = 2;
+
+        let selectedOption;
+
+        function checkAnswer() {
+            if (selectedOption === misspelledIndex) {
+                document.getElementById('result').innerHTML = '<span class="thumbs-up">&#128077;</span> Correct!';
+            } else {
+                document.getElementById('result').innerHTML = 'Incorrect! Try again.';
+            }
+        }
+
+        function nextWord() {
+            selectedOption = undefined;
+            document.getElementById('result').innerHTML = '';
+            // Generate a new set of options
+            const options = Array.from({ length: words.length }, (_, i) => i);
+            options.sort(() => Math.random() - 0.5);
+
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            options.forEach(index => {
+                const optionButton = document.createElement('button');
+                optionButton.textContent = words[index];
+                optionButton.addEventListener('click', () => {
+                    selectedOption = index;
+                });
+                optionsContainer.appendChild(optionButton);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Find the Misspelled Word</h1>
+        <div id="options-container"></div>
+        <button onclick="checkAnswer()">Check Answer</button>
+        <button onclick="nextWord()">Next Word</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

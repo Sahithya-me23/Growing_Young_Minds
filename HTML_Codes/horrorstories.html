@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Story Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+        }
+
+        .image-side {
+            position: relative;
+            background: url('horror.jpg') center/cover no-repeat;
+            overflow: hidden;
+	    height:100%
+        }
+
+        .story-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(to right, #e7dfe7, #a3a29fcb);
+            color: #0e0d0d;
+	    height:100%;
+        line-height: 30px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-side"></div>
+        <div class="story-side animate-in">
+            <h1><u><b>THE BIG TOE</b></u></h1>
+            <p><i>This is a story that is not too scary for young children and can actually be quite funny. This traditional Southern tale should be told in a serious tone.
+
+A woman is gardening when she digs up a hairy toe. She brings it in the house and puts it in a jar. When she goes to bed that night, she hears the wind moaning and groaning and then she hears “Where is my Hair-r-r-y To-o-e?”
+
+She creeps further under the covers as the house creaks and cracks and she again hears, “Where is my Hair-r-r-y To-o-e?”
+
+Continue this story as long as you wish, with more details about the scary noises in the house and repeating the question “Where is my Hairy Toe” more forcibly and louder.
+
+Finally, say “Where is my Hair-r-r-y To-o-e?” in a low, menacing voice and then jump up, point at the listeners, and scream, “You’ve got it!”
+
+The following stories are a bit longer. To build the suspense, tell them slowly, with a great deal of vocal expression
+</p></i>
+        </div>
+    </div>
+</body>
+</html>
+
+

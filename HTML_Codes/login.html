@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids' Website Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eeebdd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #login-container {
+            background-color: rgba;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+            margin-left: 600px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: e462f0;
+            color: #000000;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        h1{
+            font-family: brush script empty,cursive;
+        }
+        
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+	#bg-video{
+	position:fixed;
+	top:0;
+	left:0;
+	min-width:100%;
+	min-height:100%;
+	z-index:-1;
+	}
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <h1>Growing Young Minds</h1>
+        <form action="login.php" method="post" id="login-form">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="date" name="dob" placeholder=" Date of Birth" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <select name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="text" name="parentalInfo" placeholder="Guardian Name" required>
+            <a href="index.html" target="_self">
+            <button type="submit" id="redirectButton">Login</button>
+            </a>
+        </form>
+    </div>
+<video autoplay muted loop id="bg-video">
+<source src="kids.mp4" type="video/mp4">
+</video>
+<script>
+    // Add an event listener to the button
+    document.getElementById('redirectButton').addEventListener('click', function() {
+        // Use window.location to redirect to index.html
+        window.location.href = 'index.html';
+    });
+</script>
+</body>
+</html>
+

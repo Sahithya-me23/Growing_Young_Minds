@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Images Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: 300vh; /* Adjust based on your content */
+        }
+
+        .rhyme {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(to right, #add8e6, #87cefa);
+            color: #fff;
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .rhyme img {
+            width: 100%; /* Full width */
+            max-height: 100%; /* Full height */
+            margin-bottom: 20px;
+            border-radius: 10px;
+            animation: roll 5s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @keyframes roll {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rhyme img:hover {
+            transform: scale(1.1); /* Increase size on hover */
+            animation-play-state: paused; /* Pause rotation on hover */
+        }
+
+        .animate-in {
+            opacity: 1;
+        }
+
+        .scrolling-span {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #333;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .show-scrolling-span {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rhyme animate-in">
+            <img src="rhyme1.jpg" alt="Image 1" onclick="toggleRotation(this)">
+        </div>
+
+        <div class="rhyme animate-in">
+            <img src="rhyme2.jpg" alt="Image 2" onclick="toggleRotation(this)">
+        </div>
+    </div>
+
+    <div class="scrolling-span">Scroll down for more rhymes!</div>
+
+    <script>
+        function toggleRotation(image) {
+            image.style.animationPlayState = (image.style.animationPlayState === 'paused') ? 'running' : 'paused';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const rhymeElements = document.querySelectorAll('.rhyme');
+            const scrollingSpan = document.querySelector('.scrolling-span');
+
+            function showRhyme(index) {
+                if (index < rhymeElements.length) {
+                    rhymeElements[index].classList.add('animate-in');
+                }
+            }
+
+            window.addEventListener('scroll', function () {
+                const scrollPosition = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.body.clientHeight;
+
+                if (scrollPosition + windowHeight >= documentHeight) {
+                    scrollingSpan.classList.add('show-scrolling-span');
+                    showRhyme(0);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

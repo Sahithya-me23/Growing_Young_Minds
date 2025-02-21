@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Story Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+        }
+
+        .image-side {
+            position: relative;
+            background: url('fox.jpg') center/cover no-repeat;
+            overflow: hidden;
+	    height:100%
+        }
+
+        .story-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(to right, #ffcc00, #ff66b2);
+            color: #0e0d0d;
+	    height:100%;
+        line-height: 30px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-side"></div>
+        <div class="story-side animate-in">
+            <h1><u>THE FOX AND THE STORK</u></h1>
+            <p><i>A selfish fox once invited his neighbour, a stork, to dinner at his house in a hollow tree. That evening, the stork went to the fox’s home and knocked on the door with his long beak. The fox opened the door and invited the stork inside.</i>
+
+<i>The stork was very hungry, and the food smelled delicious. The fox served soup for dinner in shallow bowls. He ate up all his soup very quickly, but the stork could not have any of it as the dish was too shallow for his long beak. The poor stork smiled politely and stayed hungry that night.</i>
+
+<i>The stork invited the fox to join him for dinner the next day at his house. When the fox arrived at the stork’s house, he smelled something delicious cooking. The stork served the food in tall jars. The stork easily drank the soup, but the fox could not reach inside the tall jug. This time it was the fox’s turn to go hungry.</p></i>
+<h1><u>Moral Of The Story:</u></h1>
+
+The moral of “The Fox And The Stork” story is “People will treat you the same way you treat them.”
+        </div>
+    </div>
+</body>
+</html>
+

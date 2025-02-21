@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+#bg-video{
+position:fixed;
+top:0;
+left:0;
+min-width:100%;
+min-height:100%;
+object-fit:cover;
+z-index:-1;
+}
+</style>
+<map name="color">
+<area shape="rect" coords="50,50,250,250" href="yellow.html">
+<area shape="rect" coords="260,50,450,250" href="red.htm">
+<area shape="rect" coords="260,260,450,450" href="green.htm">
+<area shape="circle" coords="100,350,100" href="blue.htm">
+</map> <!--cordinates for rectangle are starting width ,starting height, end width ,end height  and for the circle centerx,centery,radius refer chidres tech tutorials--> 
+<img src="colors.jpg"  usemap="#color" width=500 height=500>
+<!--<marquee direction="right" behavior="alternate" style="background:bg.jpeg font-color=red">
+<h1> Memories together</h1> -->
+<video autoplay muted loop id="bg-video">
+<source src="index.mp4" type="video/mp4">
+</video>
+</marquee>
+</body>
+</html>

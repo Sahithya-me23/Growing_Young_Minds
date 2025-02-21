@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .image {
+      width: 200px;
+      height: 200px;
+    }
+
+    .hand {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      transition: transform 0.5s;
+    }
+
+    .image:hover .hand {
+      transform: translateX(-50%) rotate(-30deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img src="image1.jpg" alt="Image 1" class="image">
+    <img src="hand.png" alt="Hand" class="hand">
+  </div>
+
+  <div class="image-container">
+    <img src="image2.jpg" alt="Image 2" class="image">
+    <img src="hand.png" alt="Hand" class="hand">
+  </div>
+
+  <div class="image-container">
+    <img src="image3.jpg" alt="Image 3" class="image">
+    <img src="hand.png" alt="Hand" class="hand">
+  </div>
+
+</body>
+</html>
+

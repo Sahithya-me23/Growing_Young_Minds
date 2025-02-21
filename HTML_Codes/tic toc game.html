@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: blue;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    #board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 2px;
+      margin-top: 20px;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <div id="board">
+    <div class="cell" onclick="cellClicked(0)"></div>
+    <div class="cell" onclick="cellClicked(1)"></div>
+    <div class="cell" onclick="cellClicked(2)"></div>
+    <div class="cell" onclick="cellClicked(3)"></div>
+    <div class="cell" onclick="cellClicked(4)"></div>
+    <div class="cell" onclick="cellClicked(5)"></div>
+    <div class="cell" onclick="cellClicked(6)"></div>
+    <div class="cell" onclick="cellClicked(7)"></div>
+    <div class="cell" onclick="cellClicked(8)"></div>
+  </div>
+  <p id="winner"></p>
+
+  <script>
+    
+    let currentPlayer = 'X';
+    const cells = document.querySelectorAll('.cell');
+    let gameActive = true;
+
+    function cellClicked(index) {
+      if (!gameActive || cells[index].textContent !== '') return;
+
+      cells[index].textContent = currentPlayer;
+      checkWinner();
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+    function checkWinner() {
+      const winningCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+      ];
+
+      for (const combo of winningCombos) {
+        const [a, b, c] = combo;
+        if (cells[a].textContent !== '' &&
+            cells[a].textContent === cells[b].textContent &&
+            cells[a].textContent === cells[c].textContent) {
+          document.getElementById('winner').textContent = `Player ${cells[a].textContent} wins!`;
+          gameActive = false;
+          return;
+        }
+      }
+
+      const isTie = Array.from(cells).every(cell => cell.textContent !== '');
+      if (isTie) {
+        document.getElementById('winner').textContent = "It's a tie!";
+        gameActive = false;
+      }
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Find Game</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: url('Background.jpg') center/cover no-repeat; /* Add the path to your background image */
+            font-family: Arial, sans-serif;
+        }
+
+        #game-container {
+            text-align: center;
+            color: #fff;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background-color: #e0e0e0;
+            animation: colorChange 2s infinite;
+        }
+
+        #feedback {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .correct {
+            animation: flyIn 1s ease-in-out, increaseSize 1s ease-in-out, colorChange 2s infinite;
+            color: green;
+        }
+
+        .wrong {
+            animation: flyIn 1s ease-in-out, increaseSize 1s ease-in-out, shake 0.5s ease-in-out, colorChange 2s infinite;
+            color: red;
+        }
+
+        @keyframes flyIn {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes increaseSize {
+            0% { font-size: 20px; }
+            100% { font-size: 40px; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25%, 75% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+        }
+
+        @keyframes colorChange {
+            0% { background-color: #e0e0e0; color: #333; }
+            25% { background-color: #ffcccb; color: #333; }
+            50% { background-color: #b3ffb3; color: #333; }
+            75% { background-color: #b3e0ff; color: #333; }
+            100% { background-color: #e0e0e0; color: #333; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <h1>Word Find Game</h1>
+
+    <table id="wordFindGrid">
+        <!-- Replace these letters with your own -->
+        <tr>
+            <td>D</td><td>O</td><td>G</td><td>C</td><td>A</td><td>T</td><td>K</td><td>I</td><td>N</td><td>G</td>
+        </tr>
+        <tr>
+            <td>P</td><td>I</td><td>G</td><td>B</td><td>O</td><td>O</td><td>K</td><td>P</td><td>P</td><td>N</td>
+        </tr>
+        <tr>
+            <td>B</td><td>A</td><td>L</td><td>L</td><td>A</td><td>N</td><td>T</td><td>M</td><td>O</td><td>O</td>
+        </tr>
+        <tr>
+            <td>A</td><td>L</td><td>P</td><td>P</td><td>L</td><td>E</td><td>A</td><td>P</td><td>O</td><td>E</td>
+        </tr>
+        <tr>
+            <td>B</td><td>A</td><td>L</td><td>L</td><td>R</td><td>P</td><td>R</td><td>B</td><td>O</td><td>O</td>
+        </tr>
+        <tr>
+            <td>N</td><td>B</td><td>A</td><td>L</td><td>L</td><td>A</td><td>A</td><td>L</td><td>L</td><td>S</td>
+        </tr>
+        <tr>
+            <td>B</td><td>O</td><td>O</td><td>T</td><td>A</td><td>T</td><td>E</td><td>R</td><td>O</td><td>L</td>
+        </tr>
+        <tr>
+            <td>B</td><td>O</td><td>O</td><td>K</td><td>R</td><td>I</td><td>D</td><td>S</td><td>A</td><td>N</td>
+        </tr>
+    </table>
+
+    <div>
+        <label for="wordInput">Enter a word:</label>
+        <input type="text" id="wordInput">
+        <button onclick="checkWord()">Submit</button>
+    </div>
+
+    <div id="feedback"></div>
+</div>
+
+<script>
+    // List of words to find
+    const wordsToFind = ['DOG', 'CAT', 'MOON', 'KING', 'PIG', 'BOOK', 'BALL', 'ANT', 'APPLE', 'BUS'];
+
+    // Function to hide words in the grid
+    function hideWordsInGrid(grid, words) {
+        words.forEach(word => {
+            const direction = Math.random() < 0.5 ? 'horizontal' : 'vertical';
+            const row = Math.floor(Math.random() * (grid.length - word.length + 1));
+            const col = Math.floor(Math.random() * (grid[0].length - word.length + 1));
+
+            if (direction === 'horizontal') {
+                for (let i = 0; i < word.length; i++) {
+                    grid[row][col + i] = word[i];
+                }
+            } else {
+                for (let i = 0; i < word.length; i++) {
+                    grid[row + i][col] = word[i];
+                }
+            }
+        });
+    }
+
+    // Get the table element
+    const gridTable = document.getElementById('wordFindGrid');
+    const feedbackDiv = document.getElementById('feedback');
+
+    // Convert the table into a 2D array
+    const grid = Array.from(gridTable.rows).map(row =>
+        Array.from(row.cells).map(cell => cell.textContent)
+    );
+
+    // Hide words in the grid
+    hideWordsInGrid(grid, wordsToFind);
+
+    // Update the table with the hidden words and apply animations
+    grid.forEach((row, rowIndex) => {
+        row.forEach((cell, colIndex) => {
+            const tableCell = gridTable.rows[rowIndex].cells[colIndex];
+            tableCell.textContent = cell;
+            tableCell.style.animationDelay = `${Math.random() * 2}s`; // Add a random delay to create a staggered effect
+        });
+    });
+
+    // Function to check the entered word
+    function checkWord() {
+        const wordInput = document.getElementById('wordInput').value.toUpperCase();
+
+        if (wordsToFind.includes(wordInput)) {
+            feedbackDiv.innerHTML = '<span class="correct">👍 Correct!</span>';
+        } else {
+            feedbackDiv.innerHTML = '<span class="wrong">👎 Wrong! Try again.</span>';
+        }
+    }
+</script>
+
+</body>
+</html>
+
