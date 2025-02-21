@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('back1.jpg');
+  color: white;
+  background-size: cover;
+    
+}
+
+.container {
+  margin-top: 100px;
+  font-size:80px
+  
+}
+
+input {
+  margin-bottom: 10px;
+}
+
